@@ -1,0 +1,7 @@
+requests
+
+flask
+
+readability-lxml
+
+beautifulsoup4

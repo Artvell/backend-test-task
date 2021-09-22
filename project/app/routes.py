@@ -10,11 +10,11 @@ DOWNLOAD_DIRECTORY = "data"
 @app.route('/')
 def index():
     if request.method == "GET":
-        url = request.args.get("url")
+        url = request.args.get("url","")
         width = request.args.get("width",0)
         images = request.args.get("images",False)
         use_cached = request.args.get("cached",False)
-        short_uri = url.split("/")[-1]
+        short_uri = url.split("/")[-1] if url[-1]!="/" else url.split("/")[-2]
         if not isinstance(width,int):
             try:
                 width = int(width)
